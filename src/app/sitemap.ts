@@ -3,7 +3,7 @@ import { MetadataRoute } from "next";
 const SITE_URL = "https://osoulaldiafa.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date().toISOString();
+  const now = new Date("2026-06-01").toISOString();
 
   const routes = [
     { path: "/", priority: 1.0, changeFrequency: "weekly" as const },

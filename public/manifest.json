@@ -9,7 +9,11 @@
   "orientation": "portrait-primary",
   "lang": "ar",
   "dir": "rtl",
-  "categories": ["hospitality", "food", "business"],
+  "categories": [
+    "hospitality",
+    "food",
+    "business"
+  ],
   "scope": "/",
   "icons": [
     {

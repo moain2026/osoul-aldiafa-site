@@ -2,8 +2,7 @@ import { Metadata } from "next";
 import { HomePageClient } from "./HomePageClient";
 import {
   generateBreadcrumbSchema,
-  generateFAQSchema,
-} from "@/lib/schema";
+  generateFAQSchema, jsonLd } from "@/lib/schema";
 
 const SITE_URL = "https://osoulaldiafa.com";
 
@@ -64,8 +63,8 @@ const breadcrumbSchema = generateBreadcrumbSchema([
 export default function HomePage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }} />
       <HomePageClient />
     </>
   );

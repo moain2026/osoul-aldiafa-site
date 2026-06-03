@@ -5,8 +5,7 @@ import BottomNav from "@/components/BottomNav";
 import {
   generateLocalBusinessSchema,
   generateWebSiteSchema,
-  generateOrganizationSchema,
-} from "@/lib/schema";
+  generateOrganizationSchema, jsonLd } from "@/lib/schema";
 
 const SITE_URL = "https://osoulaldiafa.com";
 
@@ -140,19 +139,19 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(generateOrganizationSchema()),
+            __html: jsonLd(generateOrganizationSchema()),
           }}
         />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(generateLocalBusinessSchema()),
+            __html: jsonLd(generateLocalBusinessSchema()),
           }}
         />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(generateWebSiteSchema()),
+            __html: jsonLd(generateWebSiteSchema()),
           }}
         />
       </head>

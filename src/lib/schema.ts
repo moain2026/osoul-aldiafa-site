@@ -171,3 +171,14 @@ export function generateWebSiteSchema() {
     },
   };
 }
+
+/**
+ * تسلسل آمن لـ JSON-LD يمنع XSS عبر هروب < و > و &
+ * Safe JSON-LD serializer (escapes <, >, & to prevent XSS in <script>)
+ */
+export function jsonLd(obj: unknown): string {
+  return JSON.stringify(obj)
+    .replace(/</g, "\\u003c")
+    .replace(/>/g, "\\u003e")
+    .replace(/&/g, "\\u0026");
+}

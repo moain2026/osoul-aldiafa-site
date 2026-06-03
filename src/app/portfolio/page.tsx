@@ -3,8 +3,7 @@ import PortfolioClient from "./PortfolioClient";
 import { generatePageMetadata } from "@/components/SEO";
 import {
   generateBreadcrumbSchema,
-  generateWebPageSchema,
-} from "@/lib/schema";
+  generateWebPageSchema, jsonLd } from "@/lib/schema";
 
 const SITE_URL = "https://osoulaldiafa.com";
 
@@ -35,8 +34,8 @@ const webPageSchema = generateWebPageSchema({
 export default function PortfolioPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(webPageSchema) }} />
       <PortfolioClient />
     </>
   );
